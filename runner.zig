@@ -2,6 +2,7 @@ const std = @import("std");
 const builtin = @import("builtin");
 
 const hello_world = @import("hello_world/src/main.zig"); // hmmh :PPP
+const arraylist = @import("arraylist/src/main.zig");
 
 // thanks to https://stackoverflow.com/questions/62018241/current-way-to-get-user-input-in-zig
 fn read_line(line_buffer: []u8, input: *std.Io.Reader) ![]u8 {
@@ -56,6 +57,7 @@ pub fn main() !void {
     try stdout.interface.print("project id: {}", .{id});
     switch (id) {
         1 => try hello_world.main(),
+        2 => try arraylist.main(),
         else => std.debug.print("Unknown project number!\n", .{}),
     }
 }
